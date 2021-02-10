@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-once>{{ title }}</p>
+      <p>{{ hello() }} <a v-bind:href="link">Link</a></p>
+      <p v-html="blogLink"></p>
+      <div v-on:mousemove="updateCoordinates">
+        {{ x }} / {{ y }}
+        <span v-on:mousemove.stop> Dead Area</span>
+      </div>
+    </div>
+
+    <script type="">
+      new Vue({
+        el: "#app",
+        data: {
+          title: "Merhaba, dünya ",
+          message: "Hoşgeldin!!",
+          link: "https://www.youtube.com",
+          blogLink: "<a href='http://google.com'>Link</a>",
+          x: 0,
+          y: 0,
+        },
+        methods: {
+          hello: function () {
+            this.title = "Merhaba!!!";
+            return this.title;
+          },
+          updateCoordinates: function (event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
