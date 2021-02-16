@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="">
+      var vue1 = new Vue({
+        template: "<h3>merhabalar</h3>",
+      });
+      //vue1.$mount("#app");
+      vue1.$mount();  //buraya div in Id sini vermeyip aşağıdaki js kod satırını yazarsak yine div içerisine h1 i ekler.
+      document.getElementById('app').appendChild(vue1.$el);
+    </script>
+  </body>
+</html>
