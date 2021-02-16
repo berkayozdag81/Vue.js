@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 ref="heading">{{ title }}</h1>
+      <button v-on:click="show">Paragrafı Göster</button>
+      <p v-if="showParagraph">Her zaman göremeyebiliriz!!</p>
+    </div>
+    <div id="app2">
+      <h2>{{title}}</h2>
+      <button v-on:click="changeTitle">Değiştir</button>
+    </div>
+
+    <script type="">
+      var vue1 = new Vue({
+        el: "#app",
+        data: {
+          title: "Vue Instance 1",
+          showParagraph: false,
+        },
+        methods: {
+          show: function () {
+            this.showParagraph = !this.showParagraph;
+          },
+        },
+      });
+
+      setTimeout(function () {
+        vue1.title = "timer tarafından değiştirildi";
+      }, 2000);
+
+      var vue2 = new Vue({
+        el: "#app2",
+        data: {
+          title: "Vue Instance 2",
+        },
+        methods: {
+          changeTitle: function () {
+            vue1.title = "Vue Instance 2 tarafından değiştirildi.";
+          },
+        },
+      });
+      
+    </script>
+  </body>
+</html>
