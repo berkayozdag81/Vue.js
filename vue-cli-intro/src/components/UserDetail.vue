@@ -8,6 +8,7 @@
   </div>
 </template>
 <script>
+import {eventBus} from "../main";
 export default {
   props : {
     name : {
@@ -15,13 +16,19 @@ export default {
       default:" ",
     },
     age : {
-      default:2,
+      default:20,
     }
   },  //props olarak oluşturduğumuz değişkenleri buradaki methodlarda vs. kullanabiliriz.Yani buradaki props bir data property si gibi kullanılır.
   methods:{
     sendToParent (){
        this.$emit("data","Beşiktaş");
     }
+  },
+  //eventBus kullanarak işlem yapıldığında parent componentteki age değişmez sadece child componentlerdeki age güncellenir.
+  created() {
+    eventBus.$on("ageWasEdited", (age) => {
+      this.age = age;
+    })
   }
 }
 </script>
