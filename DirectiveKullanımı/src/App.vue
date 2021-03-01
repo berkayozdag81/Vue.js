@@ -20,7 +20,6 @@
     </div>
   </div>
 </template>
-
 <script>
 //directive in local tanımlanması:
 export default {
