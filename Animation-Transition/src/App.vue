@@ -176,7 +176,6 @@ export default {
 }
 
 /*transition-group elemenlarının hareketi durumunda kullanılır.*/
-
 .slide-move{
   transition: transform 1s;
 }
