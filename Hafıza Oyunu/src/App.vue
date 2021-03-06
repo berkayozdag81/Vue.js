@@ -1,6 +1,7 @@
 <template>
-  <component :is="activeComponent">
-
+  <component
+    @activeComponentEvent ="activeComponent = $event"
+    :is="activeComponent">
   </component>
 </template>
 <script>
